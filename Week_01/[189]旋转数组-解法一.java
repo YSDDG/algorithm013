@@ -34,12 +34,20 @@ class Solution {
         if (nums == null || nums.length < 2) return;
         int length = nums.length;
         int offset = k % length;
-        int tmp = 0;
+        if (offset == 0) return;
+        int startIdx = 0;
+        int idx = startIdx;
+        int val = nums[startIdx];
         for (int i = 0; i < length; i++) {
-            int newIndex = (i + offset) % length;
-            tmp = nums[newIndex];
-            nums[newIndex] = nums[i];
-            nums[i] = tmp;
+            idx = (idx + offset) % length;
+            int tmp = nums[idx];
+            nums[idx] = val;
+            val = tmp;
+            if (idx == startIdx) {
+                startIdx++;
+                idx = startIdx;
+                val = nums[startIdx];
+            }
         }
     }
 }
