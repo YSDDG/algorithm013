@@ -27,26 +27,13 @@ class Solution {
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         if (l1 == null) return l2;
         if (l2 == null) return l1;
-        boolean flag0 = l2.val < l1.val;
-        ListNode node = flag0 ? l2 : l1;
-        ListNode currentNode = node;
-        ListNode node1 = flag0 ? l1 : l1.next;
-        ListNode node2 = flag0 ? l2.next : l2;
-
-        while (node1 != null && node2 != null) {
-            boolean flag = node2.val < node1.val;
-            currentNode.next = flag ? node2 : node1;
-            node1 = flag ? node1 : node1.next;
-            node2 = flag ? node2.next : node2;
-            currentNode = currentNode.next;
+        if (l1.val <= l2.val) {
+            l1.next = mergeTwoLists(l1.next, l2);
+            return l1;
+        } else {
+            l2.next = mergeTwoLists(l1, l2.next);
+            return l2;
         }
-        if (node1 == null) {
-            currentNode.next = node2;
-        }
-        if (node2 == null) {
-            currentNode.next = node1;
-        }
-        return node;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
