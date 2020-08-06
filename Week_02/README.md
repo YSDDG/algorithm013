@@ -158,6 +158,8 @@ static final int MIN_TREEIFY_CAPACITY = 64;
 
 ### 重要方法
 
+#### hash方法
+
 计算key的hash值，使用key的hashCode()方法的到HashCode，然后再右移16位；此处可以看出HashMap是支持null为key的。
 
 ```java
@@ -183,7 +185,7 @@ static final int hash(Object key) {
 }
 ```
 
-put方法
+#### put方法
 
 ```java
 /**
@@ -274,7 +276,7 @@ final V putVal(int hash, K key, V value, boolean onlyIfAbsent,
 }
 ```
 
-resize() 扩容方法
+#### resize() 扩容方法
 
 ```java
 /**
