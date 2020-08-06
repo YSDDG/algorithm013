@@ -24,6 +24,11 @@ import java.util.*;
 
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
+    ///遍历数组元素
+    ///对当前字符串的char数组进行排序，并生成新的字符串
+    ///以生成的排好序的字符串为key，加入到哈希表中，值为一个字符串列表，列表元素为当前遍历的值
+    ///完成分组
+    /// 遍历哈希表，输出规定格式的结果
     public List<List<String>> groupAnagrams(String[] strs) {
         Map<String, List<String>> map = new HashMap<>();
         for (String str : strs) {

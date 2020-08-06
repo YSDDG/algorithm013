@@ -23,6 +23,17 @@
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     class Solution {
+        ///长度不同，返回false
+        ///分别对字符串的char数组进行排序，得到新的字符串，比较其排序结果是否相同
+
+
+
+
+        ///位图法  原理与哈希表相同
+        ///建立一个与字符数量相同的数组，起始为'a'，结束为'z'
+        ///遍历字符串s，统计每个字符出现的次数，数组对应下标的元素值递增1
+        ///遍历字符串t，数组对应下标的元素值递减1，若出现负值，停止遍历，返回false;
+        ///返回true
         public boolean isAnagram(String s, String t) {
             if (s.length() != t.length()) {
                 return false;

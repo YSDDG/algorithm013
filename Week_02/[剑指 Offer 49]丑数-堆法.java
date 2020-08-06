@@ -29,6 +29,11 @@ class Solution {
         return ugly.nums[n - 1];
     }
 
+    ///预计算1690个丑数
+    ///第一个丑数为1，放入堆中以及已找到的集合中
+    ///set集合代表已经找到的丑数
+    ///迭代，取出堆顶元素，加入结果集中；并分别与2，3，5相乘得到新的丑数，若之前未找到，加入到堆中
+    ///完成预计算
     static class Ugly {
         int[] nums = new int[1690];
         Set<Long> seen = new HashSet<>();

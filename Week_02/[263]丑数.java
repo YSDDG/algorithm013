@@ -34,6 +34,7 @@
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public boolean isUgly(int num) {
+        ///数学计算法判断
         if (num == 0) return false;
         if (num == 1) return true;
         while (num % 2 == 0) {

@@ -49,6 +49,7 @@ class Node {
 */
 
 class Solution {
+
     public List<List<Integer>> levelOrder(Node root) {
         List<List<Integer>> res = new ArrayList<>();
         if(root==null) return res;
@@ -57,7 +58,9 @@ class Solution {
         helper(roots, res);
         return res;
     }
-
+    ///下一层为空时，停止递归
+    ///遍历当前层的结果，放入列表这种
+    ///合并各个节点下一层的子节点，不为空，继续递归
     private void helper(List<Node> nodes, List<List<Integer>> list) {
         List<Integer> res = new ArrayList<>();
         List<Node> nextLevel = new ArrayList<>();

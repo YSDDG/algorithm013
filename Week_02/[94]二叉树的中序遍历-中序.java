@@ -31,6 +31,9 @@ import java.util.List;
  * }
  */
 class Solution {
+    ///添加 中序遍历左子树的结果
+    ///添加根节点
+    ///添加 中序遍历右子树的结果
     public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> list = new ArrayList<>();
         if (root != null) {

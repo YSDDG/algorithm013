@@ -40,6 +40,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 class Solution {
+    ///节点为空时，停止递归
+    ///添加当前节点
+    ///添加前序遍历每个子节点的结果
     public List<Integer> preorder(Node root) {
         List<Integer> list = new ArrayList<>();
         if (root == null) return list;

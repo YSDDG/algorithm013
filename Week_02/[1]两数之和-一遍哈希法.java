@@ -21,6 +21,8 @@ import java.util.Map;
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public int[] twoSum(int[] nums, int target) {
+        ///遍历数组，若哈希表中有对应当前所遍历元素的目标元素，则返回该元素和当前元素的下标
+        ///若不存在目标元素，则将数组元素和下标加入哈希表中    
         Map<Integer, Integer> cache = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
             if (cache.containsKey(target - nums[i])) return new int[]{i, cache.get(target - nums[i])};

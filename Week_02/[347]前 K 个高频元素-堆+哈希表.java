@@ -32,6 +32,9 @@ import java.util.*;
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public int[] topKFrequent(int[] nums, int k) {
+        ///统计数组中每个元素出现的次数，放入哈希表中
+        ///将哈希表的key依次放入大小为k小顶堆中，比较器为哈希key对应的value（即出现的次数）
+        ///取出堆中的所有元素生成结果
         if (k < 1 || k > nums.length) return new int[0];
         Map<Integer, Integer> map = new HashMap<>();
         for (int num : nums) {
