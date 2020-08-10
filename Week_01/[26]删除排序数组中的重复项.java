@@ -47,6 +47,10 @@
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public int removeDuplicates(int[] nums) {
+        ///双指针法
+        ///坐指针表示最新元素的插入位置，右指针表示遍历的位置
+        ///右指针递增1，右指针指向的元素与左指针的元素不同，插入到左指针后的一个位置，左指针递增1
+        ///右指针遍历到数组结尾停止
         if (nums == null || nums.length < 1) {
             return 0;
         }
