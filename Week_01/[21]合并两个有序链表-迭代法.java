@@ -25,6 +25,9 @@
  */
 class Solution {
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+        
+        ///迭代法
+        ///遍历两个链表，每次将小的节点加入到结果的尾部，直到遍历完毕
         if (l1 == null) return l2;
         if (l2 == null) return l1;
         ListNode preHead = new ListNode(-1);

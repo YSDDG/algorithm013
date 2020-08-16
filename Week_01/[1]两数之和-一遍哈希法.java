@@ -20,6 +20,7 @@ import java.util.HashMap;
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public int[] twoSum(int[] nums, int target) {
+        ///一遍哈希法
         HashMap<Integer, Integer> cache = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
             if (cache.containsKey(target - nums[i])) return new int[]{i, cache.get(target - nums[i])};
