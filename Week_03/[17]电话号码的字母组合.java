@@ -43,6 +43,8 @@ class Solution {
         return list;
     }
 
+    ///时间复杂度:O(3^N*4^M) N+M = 数字串的长度 
+    ///空间复杂度：O（3^N*4^M）递归栈
     private void helper(int level, String digits, String tmpStr, List<String> res) {
         if (digits.length() == 0) return;
         //终止条件
@@ -51,6 +53,7 @@ class Solution {
             return;
         }
         //当前层逻辑
+        ///选择每个数字的值
         char letter = digits.charAt(level);
         if (dict.containsKey(letter)) {
             String[] chars = dict.get(letter);
