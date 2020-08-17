@@ -30,12 +30,17 @@ class Solution {
     }
 
     private void helper(int first, int n, int k, LinkedList<Integer> list) {
+        ///终止条件
         if (list.size() == k) {
             res.add(new LinkedList<>(list));
         }
+        ///选择
         for (int i = first; i < n + 1; i++) {
+            ///选择当前元素
             list.add(i);
+            ///下一个
             helper(i + 1, n, k, list);
+            ///回溯
             list.removeLast();
         }
     }

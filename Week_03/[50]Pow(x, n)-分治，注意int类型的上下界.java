@@ -32,10 +32,14 @@
 class Solution {
 
     public double myPow(double x, int n) {
+        ///转换为长整型，避免-N的越界问题
         long N = n;
         return N > 0 ? helper(x, N) : 1.0 / helper(x, -N);
     }
 
+    ///分治
+    ///时间复杂度：O(logN)
+    ///空间复杂度：O(logN)) 递归栈
     private double helper(double x, long n) {
         if (n == 0) return 1.0;
         double half = helper(x, n / 2);

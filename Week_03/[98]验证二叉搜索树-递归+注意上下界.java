@@ -49,8 +49,19 @@ class Solution {
         return helper(root, null, null);
     }
 
+    ///递归
+    ///时间复杂度：O(N) 每个节点遍历一次
+    ///空间复杂度：O(N) 递归栈及常数级的中间变量
     private boolean helper(TreeNode root, Integer lower, Integer upper) {
+        ///终止条件
         if (root == null) return true;
+
+        ///每个子树都有其上下界
+        ///左子树所有节点必须小于其父节点
+        ///右子树所有节点必须大于其父节点
+        ///左子树中的左子节点，上界为父节点；左子树中的右子节点，下界为父节点，上界为父节点的父节点（祖父节点）
+        ///右子树中的右子节点，下界为父节点；右子树中的左子节点，上届为父节点，下界为父节点的父节点（祖父节点）
+        
         //上界 left
         if (upper != null && root.val >= upper) return false;
         //下界 right

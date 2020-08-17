@@ -30,6 +30,9 @@
  * }
  */
 class Solution {
+    ///递归
+    ///时间复杂度:O(N) 每个节点遍历一次
+    ///空间复杂度：O（height） 树的深度
     public int maxDepth(TreeNode root) {
         if (root == null) return 0;
         return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));

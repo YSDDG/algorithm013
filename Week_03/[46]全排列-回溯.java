@@ -28,16 +28,27 @@ class Solution {
         return res;
     }
 
+    /**
+     * 时间复杂度：O(n*n!)（helper时间复杂度为n!,helper被调用n次）
+     * 空间复杂度：中间列表以及递归栈（O（N））
+     */
     private void helper(int[] nums, int index, Set<Integer> seen, LinkedList<Integer> list) {
+        ///终止条件
         if (list.size() == nums.length) {
+            ///深度复制
             res.add(new LinkedList<>(list));
             return;
         }
         for (int num : nums) {
+            ///如果之前已选择，则选择下一个
             if (seen.contains(num)) continue;
+            ///选择当前元素
             list.add(num);
+            ///加入已访问列表
             seen.add(num);
+            ///下探到下一层
             helper(nums, index + 1, seen, list);
+            ///回溯
             list.removeLast();
             seen.remove(num);
         }

@@ -38,9 +38,14 @@
  * }
  */
 class Solution {
+    ///时间复杂度：O(N) 每个节点遍历一次
+    ///空间复杂度: O(height) 递归栈
     public TreeNode invertTree(TreeNode root) {
+        //终止条件
         if (root == null) return root;
+        ///翻转左子树
         TreeNode left = invertTree(root.left);
+        ///翻转右子树
         TreeNode right = invertTree(root.right);
         root.left = right;
         root.right = left;

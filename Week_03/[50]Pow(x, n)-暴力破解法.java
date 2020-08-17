@@ -30,6 +30,8 @@
 
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
+    ///时间复杂度：O(N)
+    ///空间复杂度: O(1)
     public double myPow(double x, int n) {
         double res = 1;
         if (n > 0) {

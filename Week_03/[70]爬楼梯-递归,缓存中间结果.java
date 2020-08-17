@@ -32,6 +32,9 @@ import java.util.Map;
 class Solution {
     Map<Integer, Integer> cache = new HashMap<>();
 
+    ///递归
+    ///时间复杂度: O(N) 递归层数
+    ///时间复杂度: O(N) 递归栈+缓存
     public int climbStairs(int n) {
         if (n <= 0) return 0;
         if (n == 1) return 1;

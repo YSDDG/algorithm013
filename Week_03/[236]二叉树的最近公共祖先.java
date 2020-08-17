@@ -46,6 +46,10 @@
  * }
  */
 class Solution {
+    ///存储结构信息方法
+
+    ///时间复杂度：O(N)获取结构信息，需要遍历每一个节点
+    ///空间复杂度: O(N) 结构信息存储O(N)以及递归栈O(height)
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         Map<TreeNode, TreeNode> parent = new HashMap<>();
         Set<TreeNode> visited = new HashSet<>();
@@ -61,6 +65,7 @@ class Solution {
         return root;
     }
 
+    ///获取结构信息
     private void dfs(TreeNode root, Map<TreeNode, TreeNode> parent) {
         if (root.left != null) {
             parent.put(root.left, root);
