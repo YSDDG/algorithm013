@@ -53,33 +53,30 @@ import java.util.*;
 
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
-    Set<String> cache = new HashSet<>();
+    Integer min = Integer.MAX_VALUE;
 
     public int minMutation(String start, String end, String[] bank) {
-        cache.addAll(Arrays.asList(bank));
-        if (!cache.contains(end)) return -1;
-        if (start.equals(end)) return 0;
-        List<Integer> indexes = new ArrayList<>();
-        for (int i = 0; i < start.length(); i++) {
-            char sc = start.charAt(i);
-            char ec = start.charAt(i);
-            if (sc != ec) indexes.add(i);
-        }
-        dfs(start, end, 0, indexes);
+        dfs(start, end, bank, 0, new HashSet<>());
+        return min == Integer.MAX_VALUE ? -1 : min;
     }
 
-    private void dfs(String start, String end, int level, List<Integer> indexes) {
-
-    }
-
-    private String replaceCharAtIndex(String start, Integer index) {
-        char[] chars = start.toCharArray();
-        if (chars[index] == 'A') {
-            chars[index] = 'T';
-            return new String(chars);
+    private void dfs(String current, String end, String[] bank, int level, Set<String> visited) {
+        if (current.equals(end)) {
+            min = Math.min(min, level);
+            return;
         }
-        chars[index] = 'A';
-        return new String(chars);
+
+        for (String s : bank) {
+            int diff = 0;
+            for (int j = 0; j < 8; j++) {
+                if (current.charAt(j) != s.charAt(j)) diff++;
+            }
+            if (diff == 1 && !visited.contains(s)) {
+                visited.add(s);
+                dfs(s, end, bank, level + 1, visited);
+                visited.remove(s);
+            }
+        }
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
