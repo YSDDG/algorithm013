@@ -30,28 +30,21 @@
  */
 class Solution {
 
-    List<Integer> res = new ArrayList<>();
-
-
     public List<Integer> largestValues(TreeNode root) {
+        List<Integer> res = new ArrayList<>();
         if (root == null) return res;
-        Map<TreeNode, Integer> floor = new HashMap<>();
         Queue<TreeNode> queue = new LinkedList<>();
-        floor.put(root, 0);
         queue.add(root);
         while (!queue.isEmpty()) {
-            TreeNode curr = queue.poll();
-            Integer index = floor.get(curr);
-            if (res.size() == index) res.add(curr.val);
-            else res.set(index, Math.max(curr.val, res.get(index)));
-            if (curr.left != null) {
-                queue.add(curr.left);
-                floor.put(curr.left, index + 1);
+            int size = queue.size();
+            int max = Integer.MIN_VALUE;
+            for (int i = 0; i < size; i++) {
+                TreeNode curr = queue.poll();
+                max = Math.max(max, curr.val);
+                if (curr.left != null) queue.add(curr.left);
+                if (curr.right != null) queue.add(curr.right);
             }
-            if (curr.right != null) {
-                queue.add(curr.right);
-                floor.put(curr.right, index + 1);
-            }
+            res.add(max);
         }
         return res;
     }
