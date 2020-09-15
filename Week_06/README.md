@@ -80,7 +80,7 @@ private static int divide_conquer(Problem problem, ) {
 
 - 经验3：两个字符串最后的变换过程，做成一个二维数组，行和列分别为两个字符串
 
-![image-20200915154735026](C:\Users\HanZhijie\AppData\Roaming\Typora\typora-user-images\image-20200915154735026.png)
+![image-20200915154735026]( C:\Users\HanZhijie\AppData\Roaming\Typora\typora-user-images\image-20200915154735026.png)
 
 
 
@@ -101,3 +101,9 @@ private static int divide_conquer(Problem problem, ) {
      - 变形2：一次爬1级2级3级，但相邻两步不能相同(medium)
 
 2. [三角形最小路径和](https://leetcode-cn.com/problems/triangle/description/)
+
+3. [最大子序和](https://leetcode-cn.com/problems/maximum-subarray/)
+
+4. [乘积最大子数组](https://leetcode-cn.com/problems/maximum-product-subarray/description/)
+
+5. [零钱兑换](https://leetcode-cn.com/problems/coin-change/description/)
