@@ -107,3 +107,5 @@ private static int divide_conquer(Problem problem, ) {
 4. [乘积最大子数组](https://leetcode-cn.com/problems/maximum-product-subarray/description/)
 
 5. [零钱兑换](https://leetcode-cn.com/problems/coin-change/description/)
+
+6. [打家劫舍](https://leetcode-cn.com/problems/house-robber/)
