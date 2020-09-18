@@ -19,6 +19,18 @@
 
 ### 位运算的运用
 
+#### 异或
+
+<img src="异或.png" alt="avatar" style="zoom:50%;" />
+
+#### 位运算实战
+
+<img src="位运算实战.png" alt="avatar" style="zoom:50%;" />
+
+#### 指定位置位运算
+
+<img src="指定位置位运算.png" alt="avatar" style="zoom:50%;" />
+
 ## 布隆过滤器
 
 一个很长的二进制向量和一系列随机映射函数。可以用于检验一个元素是否在一个集合中。
