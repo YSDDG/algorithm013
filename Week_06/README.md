@@ -28,7 +28,7 @@
 
 5. solve original problem
 
-![image-20200915161115966](C:\Users\HanZhijie\AppData\Roaming\Typora\typora-user-images\image-20200915161115966.png)
+![avatar](dp Step.png)
 
 ## 递归代码模板
 
@@ -80,7 +80,7 @@ private static int divide_conquer(Problem problem, ) {
 
 - 经验3：两个字符串最后的变换过程，做成一个二维数组，行和列分别为两个字符串
 
-![image-20200915154735026]( C:\Users\HanZhijie\AppData\Roaming\Typora\typora-user-images\image-20200915154735026.png)
+![avatar](字符串矩阵.png)
 
 
 
