@@ -95,6 +95,64 @@
 
 ### 代码示例
 
+#### 冒泡排序
+
+```java
+public void bubbleSort(int[] nums) {
+    if (nums == null || nums.length == 1) return;
+    for (int i = 0; i < nums.length; i++) {
+        for (int j = i + 1; j < nums.length; j++) {
+            int tmp;
+            if (nums[i] > nums[j]) {
+                tmp = nums[j];
+                nums[j] = nums[i];
+                nums[i] = tmp;
+            }
+        }
+    }
+}
+```
+
+#### 选择排序
+
+```java
+public void selectionSort(int[] nums) {
+    if (nums == null || nums.length == 1) return;
+    int tmp;
+    for (int i = 0; i < nums.length; i++) {
+        int minIdx = i;
+        for (int j = i + 1; j < nums.length; j++) {
+            if (nums[j] < nums[minIdx]) {
+                minIdx = j;
+            }
+        }
+        tmp = nums[i];
+        nums[i] = nums[minIdx];
+        nums[minIdx] = tmp;
+    }
+}
+```
+
+#### 插入排序
+
+```java
+public void insertionSort(int[] nums) {
+    if (nums == null || nums.length == 1) return;
+    for (int i = 0; i < nums.length; i++) {
+        for (int j = 0; j < i; j++) {
+            int tmp;
+            if (nums[i] < nums[j]) {
+                tmp = nums[j];
+                nums[j] = nums[i];
+                nums[i] = tmp;
+            }
+        }
+    }
+}
+```
+
+
+
 #### 快速排序
 
 ```java

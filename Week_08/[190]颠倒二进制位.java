@@ -38,6 +38,10 @@
 //leetcode submit region begin(Prohibit modification and deletion)
 public class Solution {
     // you need treat n as an unsigned value
+    /*
+    时间复杂度：O(1)
+    空间复杂度: O(1)
+    */
     public int reverseBits(int n) {
         int ret = 0;
         for (int i = 0; i < 32; i++) {
