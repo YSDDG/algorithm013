@@ -22,6 +22,9 @@
 
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
+    /*
+    时空复杂度：O（1）
+    */
     public boolean isPowerOfTwo(int n) {
         if (n <= 0) return false;
         int cnt = 0;
